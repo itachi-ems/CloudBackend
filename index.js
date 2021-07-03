@@ -12,5 +12,5 @@ routes(app);
 const port = process.env.port || 3000;
 app.listen(port,()=>{
 
-    console.log("Server IS Running");
+    console.log("Server Is Running");
 });

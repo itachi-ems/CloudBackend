@@ -29,6 +29,28 @@ userDB.getAll =  () => {
 
 }
 
+userDB.registerUser = (user) => {
+
+    const query = `INSERT INTO user (user_email,user_firstname,user_lastname,user_password) values('${user.emailid}','${user.firstname}','${user.lastname}','${user.password}')`;
+    console.log(query);
+
+    return new Promise((resolve,reject)=>{
+
+        pool.query(query,(err,results)=>{
+            if(err){
+                reject(err);
+            }
+            else {
+                resolve(results);
+            }
+
+
+        })
+
+    });
+
+}
+
 
 
 module.exports = userDB

@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const {
-    getAllUsers
+    getAllUsers,register
    
 } = require('../Controller/UserController')
 
@@ -9,6 +9,7 @@ const {
 const userRoutes = (app) =>{
 
 router.get('/',getAllUsers);
+router.post('/',register);
 app.use('/api/user',router);
 }
 

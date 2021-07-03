@@ -6,7 +6,7 @@ module.exports.getUser = async (req,res) => {
 }
 
 
-module.exports.getAllUsers = async(req,res) => {
+module.exports.getAllUsers = async (req,res) => {
 
     try {
 
@@ -22,4 +22,17 @@ module.exports.getAllUsers = async(req,res) => {
 
     }
 }
+
+module.exports.register = async (req,res)=>{
+    
+    try {
+        const results = await db.registerUser(req.body);
+        res.json(results);
+    }
+    catch(e){
+        res.sendStatus(500).json(e);
+    }
+}
+
+
 
