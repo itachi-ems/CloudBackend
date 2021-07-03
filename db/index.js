@@ -13,7 +13,7 @@ let userDB = {}
 
 userDB.getAll =  () => {
 
-    const query = "SELECT * from users";
+    const query = "SELECT * from user";
 
     return new Promise((resolve,reject)=>{
 
