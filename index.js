@@ -1,12 +1,10 @@
 //Requires
 const express = require('express');
-const routes = require('./api/Routes/index');
+const routes = require('./Routes/index');
 
 const app = express();
 
 app.use(express.json());
-
-
 
 
 routes(app);

@@ -1,7 +1,13 @@
-const UserRoutes = ('./UserRoutes');
-const routes = (app) => {
+const userRoutes = require('./UserRoutes');
 
-    app.use(UserRoutes);
+
+const routes = (app) =>{
+
+
+    userRoutes(app);
+
 
 }
-module.exports.routes;
+
+
+module.exports = routes;
