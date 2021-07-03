@@ -31,4 +31,4 @@ userDB.getAll =  () => {
 
 
 
-module.exports.userDB
+module.exports = userDB
