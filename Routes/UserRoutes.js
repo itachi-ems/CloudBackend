@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const {
-    getUser
+    getAllUsers
    
 } = require('../Controller/UserController')
 
@@ -8,7 +8,7 @@ const {
 
 const userRoutes = (app) =>{
 
-router.get('/',getUser);
+router.get('/',getAllUsers);
 app.use('/api/user',router);
 }
 
