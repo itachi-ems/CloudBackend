@@ -52,7 +52,7 @@ userDB.registerUser = (user) => {
 }
 
 userDB.login = (user)=> {
-    const query = `SELECT emailid from user WHERE user_email=${user.emailid} and user_password=${user.password}`;
+    const query = `SELECT emailid from user WHERE user_email='${user.emailid}' and user_password='${user.password}'`;
 
     return new Promise((resolve,reject)=>{
         pool.query(query,(err,result)=>{
