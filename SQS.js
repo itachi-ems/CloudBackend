@@ -2,7 +2,8 @@ const AWS = require('aws-sdk');
 
 AWS.config.update({
     accessKeyId:process.env.AWS_BUCKET_ACCESSKEY,
-    secretAccessKey:process.env.AWS_BUCKET_AWS_BUCKET_SECRETKEY
+    secretAccessKey:process.env.AWS_BUCKET_AWS_BUCKET_SECRETKEY,
+    region:"us-east-2"
 })
 
 const sqs = new AWS.SQS({apiVersion: '2012-11-05'});
