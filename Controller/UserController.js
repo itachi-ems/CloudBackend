@@ -30,7 +30,7 @@ module.exports.register = async (req,res)=>{
         res.json({"message":"Register Success"});
     }
     catch(e){
-        res.sendStatus(500).json(e);
+        res.json({"message":e}).sendStatus(500)
     }
 }
 
