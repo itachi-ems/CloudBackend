@@ -45,6 +45,9 @@ module.exports.login = async (req,res)=>{
         }
 
     }
+    catch(e){
+        res.json({"message":e}).sendStatus(500);
+    }
 }
 
 
