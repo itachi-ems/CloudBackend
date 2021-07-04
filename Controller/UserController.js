@@ -27,10 +27,23 @@ module.exports.register = async (req,res)=>{
     
     try {
         const results = await db.registerUser(req.body);
-        res.json(results);
+        res.json({"message":"Register Success"});
     }
     catch(e){
         res.sendStatus(500).json(e);
+    }
+}
+
+module.exports.login = async (req,res)=>{
+    try{
+        const results = await db.login(req.body);
+        if(results.length === 0) {
+            res.json({"message":"Invalid Credentials"});
+        }
+        else{
+            res.json({"message":"Success"});
+        }
+
     }
 }
 

@@ -45,10 +45,24 @@ userDB.registerUser = (user) => {
             }
 
 
-        })
+        });
 
     });
 
+}
+
+module.exports.login = (user)=> {
+    const query = `SELECT emailid from user WHERE user_email=${user.emailid} and user_password=${user.password}`;
+
+    return new Promise((resolve,reject)=>{
+        pool.query(query,(err,result)=>{
+            if(err){
+                return reject(err);
+            }
+            return resolve(result);
+
+        });
+    });
 }
 
 
