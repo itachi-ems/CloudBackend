@@ -1,4 +1,5 @@
 const db = require('../db/index');
+const { pushToQueue } = require('../SQS');
 module.exports.getUser = async (req,res) => {
 
     res.send("Hello World");
@@ -27,6 +28,7 @@ module.exports.register = async (req,res)=>{
     
     try {
         const results = await db.registerUser(req.body);
+        const sqsResults = await pushToQueue(req.body);
         res.json({"message":"Register Success"});
     }
     catch(e){
